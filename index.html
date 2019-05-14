@@ -103,9 +103,12 @@
             } while (conti.toLowerCase() == "si");
            
                 let campoListSelect = document.getElementById("campoListSelect");
+                campoListSelect.insertAdjacentHTML("beforeend", `<select id="${valueName}" name="${valueName}"></select>`);
+                var contenedorLista = document.getElementById(`${valueName}`);
                 for (let i = 0; i < valueOption.length; i++) {  
-                    campoListSelect.insertAdjacentHTML("beforeend",`<select name="${valueName}"><option value="${valueOption[i]}">${valueOption[i]}</option></select>`); 
+                    contenedorLista.insertAdjacentHTML("beforeend", `<option value="${valueOption[i]}">${valueOption[i]}</option>`); 
                 }
+            
         });
 
         // ADD INPUT CHECKBOX
