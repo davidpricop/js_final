@@ -3,184 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Generador de Formularios</title>
-    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>Generador de Formularios</header>
-    <section>
-        <article>
             <h2>Seleccione los campos para su formulario:</h2>
             <form action="#" method="GET">
                 <div >
-                    <img id="addCampoTxt" src="assets/icons/campo_text.png" alt="imagen de un campo de texto" width="30px">
+                    <button id="addCampoTxt">Agregar input tipo texto</button>
                 </div>
-                <div id="campoTxt"></div>
                 <div>
-                    <img id="addCampoNumber" src="assets/icons/campo_numero.png" alt="imagen de un campo de number" width="30px">
+                    <button id="addCampoNumber">Agregar input tipo numero</button>
                 </div>
-                <div id="campoNumber"></div>
                 <div>
-                    <img id="addCampoEmail" src="assets/icons/campo_email.svg" alt="imagen de un campo de email" width="30px">
+                    <button id="addCampoEmail">Agregar input tipo email</button>
                 </div>
-                <div id="campoEmail"></div>
                 <div>
-                    <img id="addCampoListSelect" src="assets/icons/campo_listaSelect.svg" alt="imagen de un campo de un select" width="30px">
+                    <button id="addCampoListSelect">Agregar select</button>
                 </div>
-                <div id="campoListSelect"></div>
                 <div>
-                        <img id="addCampoListCheckbox" src="assets/icons/campo_radio.png" alt="imagen de un campo de checkbox" width="30px">
+                    <button id="addCampoListCheckbox">Agregar checkbox</button>
                 </div>
-                <div id="campoListCheckbox"></div>
                 <div>
-                        <img id="addCampoListRadio" src="assets/icons/campo_radio.svg" alt="imagen de un campo de radio" width="30px">
+                    <button id="addCampoListRadio">Agregra radio</button>
                 </div>
-                <div id="campoListRadio"></div>
                 <div>
-                        <img id="addSubmit" src="assets/icons/boton_submit.png" alt="imagen de un boton submit" width="30px">
+                    <button id="addSubmit">Agregar botón de enviar formulario</button>
                 </div>
+                <br>
+                <div>
+                    <div id="campoTxt"></div>
+                    <div id="campoNumber"></div>
+                    <div id="campoEmail"></div>
+                    <div id="campoListSelect"></div>
+                    <div id="campoListCheckbox"></div>
+                    <div id="campoListRadio"></div>
+                </div>
+            
                 <div id="botonSubmit"></div>
             </form>
-        </article>
-    </section>
     <script src="assets/js/forms.js"></script>
-    <script>
-        // ADD INPUT TEXT
-
-        var addCampoTxt = document.getElementById("addCampoTxt");
-        addCampoTxt.addEventListener("click",function(){	
-            let valueName = prompt("Introduce el nombre para el name del input: ");
-            let valuePlaceholder = prompt("Introduce el placeholder para el input");
-
-            let campoTxt = document.getElementById("campoTxt");
-            campoTxt.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueName}</label><input type="text" name"${valueName}" placeholder="${valuePlaceholder}" >`);  
-        });
-
-        // ADD INPUT NUMBER
-
-        var addCampoNumber = document.getElementById("addCampoNumber");
-        addCampoNumber.addEventListener("click",function(){	
-
-            let valueName = prompt("Introduce el nombre para el name del input: ");
-            let valuePlaceholder = prompt("Introduce el placeholder para el input");
-
-            let campoNumber = document.getElementById("campoNumber");
-            campoNumber.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueName}</label><input type="text" name"${valueName}" placeholder="${valuePlaceholder}" >`);
-        });
-
-        var addCampoEmail = document.getElementById("addCampoEmail");
-        addCampoEmail.addEventListener("click",function(){	
-
-            // ADD INPUT NUMBER
-            let valueName = prompt("Introduce el nombre para el name del input: ");
-            let valuePlaceholder = prompt("Introduce el placeholder para el input");
-
-            let campoEmail = document.getElementById("campoEmail");
-            campoEmail.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueName}</label><input type="text" name"${valueName}" placeholder="${valuePlaceholder}" >`);
-        });
-
-        // ADD INPUT SELECT
-
-        var addCampoListSelect = document.getElementById("addCampoListSelect");
-        addCampoListSelect.addEventListener("click",function(){	
-
-            let valueName = prompt("Introduce el nombre para el name del input: ");
-            
-            let valueOption = [];
-            var i;
-            do {
-                if (valueOption.length == 0 || conti == "si"){
-                    valueOption.push(prompt("Valor de la opción: "));
-
-                    var conti = prompt("Quieres meter otro valor? (Responde Si o No): ");
-                    if(conti.toLowerCase() == "si"){
-                        valueOption.push(prompt("Valor de la opción: "));
-
-                        conti = prompt("Quieres meter otro valor? (Responde Si o No): ");
-                    }else if (conti.toLowerCase == "no"){
-                        break;
-                    }
-                }
-            } while (conti.toLowerCase() == "si");
-           
-                let campoListSelect = document.getElementById("campoListSelect");
-                campoListSelect.insertAdjacentHTML("beforeend", `<select id="${valueName}" name="${valueName}"></select>`);
-                var contenedorLista = document.getElementById(`${valueName}`);
-                for (let i = 0; i < valueOption.length; i++) {  
-                    contenedorLista.insertAdjacentHTML("beforeend", `<option value="${valueOption[i]}">${valueOption[i]}</option>`); 
-                }
-            
-        });
-
-        // ADD INPUT CHECKBOX
-
-        var addCampoListCheckbox = document.getElementById("addCampoListCheckbox");
-        addCampoListCheckbox.addEventListener("click",function(){	
-
-            let valueName = prompt("Introduce el nombre para el name del input: ");
-        
-            let valueCheckbox = [];
-            var i;
-            do {
-                if (valueCheckbox.length == 0 || conti == "si"){
-                    valueCheckbox.push(prompt("Valor de la opción: "));
-
-                    var conti = prompt("Quieres meter otro valor? (Responde Si o No): ");
-                    if(conti.toLowerCase() == "si"){
-                        valueCheckbox.push(prompt("Valor de la opción: "));
-
-                        conti = prompt("Quieres meter otro valor? (Responde Si o No): ");
-                    }else if (conti.toLowerCase == "no"){
-                        break;
-                    }
-                }
-            } while (conti.toLowerCase() == "si");
-           
-                let campoListCheckbox = document.getElementById("campoListCheckbox");
-                for (let i = 0; i < valueCheckbox.length; i++) {  
-                    campoListCheckbox.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueCheckbox[i]}<input type="checkbox" value="${valueCheckbox[i]}" name="${valueName}">`); 
-                }
-        });    
-
-        // ADD INPUT RADIO
-
-        var addCampoListRadio = document.getElementById("addCampoListRadio");
-        addCampoListRadio.addEventListener("click",function(){	
-
-            let valueName = prompt("Introduce el nombre para el name del input: ");
-        
-            let valueRadio = [];
-            var i;
-            do {
-                if (valueRadio.length == 0 || conti == "si"){
-                    valueRadio.push(prompt("Valor de la opción: "));
-
-                    var conti = prompt("Quieres meter otro valor? (Responde Si o No): ");
-                    if(conti.toLowerCase() == "si"){
-                        valueRadio.push(prompt("Valor de la opción: "));
-
-                        conti = prompt("Quieres meter otro valor? (Responde Si o No): ");
-                    }else if (conti.toLowerCase == "no"){
-                        break;
-                    }
-                }
-            } while (conti.toLowerCase() == "si");
-           
-                let campoListRadio = document.getElementById("campoListRadio");
-                for (let i = 0; i < valueRadio.length; i++) {  
-                    campoListRadio.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueRadio[i]}<input type="radio" value="${valueRadio[i]}" name="${valueName}">`); 
-                }
-        });    
-
-        // ADD INPUT SUBMIT
-
-        var addSubmit = document.getElementById("addSubmit");
-        addSubmit.addEventListener("click",function(){	
-
-            let valueName = prompt("Introduce el nombre para el name del boton de enviar: ");
-
-            let botonSubmit = document.getElementById("botonSubmit");
-            botonSubmit.insertAdjacentHTML("beforeend",`<input type="submit" value="${valueName}" >`);
-        });
-      </script>
 </body>
 </html>
