@@ -1,26 +1,25 @@
-// FORMS INPUTS
+// FORMS IMPUTS
 
-// ADD INPUT TEXT
+function addInputText() {
+        var addCampoTxt = document.getElementById("addCampoTxt");
+        addCampoTxt.addEventListener("click",function(){	
 
-var addCampoTxt = document.getElementById("addCampoTxt");
-addCampoTxt.addEventListener("click",function(){	
-
-    let valueName = prompt("Introduce el nombre para el name del input: ");
-    if(valueName == undefined){
-    } else {
-        let valuePlaceholder = prompt("Introduce el placeholder para el input");
-        if(valuePlaceholder == undefined){
+        let valueName = prompt("Introduce el nombre para el name del input: ");
+        if(valueName == undefined){
         } else {
-            let campoTxt = document.getElementById("campoTxt");
-            campoTxt.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueName}</label><input type="text" name"${valueName}" placeholder="${valuePlaceholder}" >`);  
-        }
-    }
-});
+            let valuePlaceholder = prompt("Introduce el placeholder para el input");
+            if(valuePlaceholder == undefined){
+            } else {
+                let campoTxt = document.getElementById("campoTxt");
+                campoTxt.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueName}</label><input type="text" name"${valueName}" placeholder="${valuePlaceholder}" >`);  
+                }
+            }
+        });
+}
 
-// ADD INPUT NUMBER
-
-var addCampoNumber = document.getElementById("addCampoNumber");
-addCampoNumber.addEventListener("click",function(){	
+function addInputNumber() {
+    var addCampoNumber = document.getElementById("addCampoNumber");
+    addCampoNumber.addEventListener("click",function(){	
 
     let valueName = prompt("Introduce el nombre para el name del input: ");
     if(valueName == undefined){
@@ -30,14 +29,14 @@ addCampoNumber.addEventListener("click",function(){
         } else {
             let campoNumber = document.getElementById("campoNumber");
             campoNumber.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueName}</label><input type="text" name"${valueName}" placeholder="${valuePlaceholder}" >`);
+            }
         }
-    }
-});
+    });
+}
 
-// ADD INPUT EMAIL
-
-var addCampoEmail = document.getElementById("addCampoEmail");
-addCampoEmail.addEventListener("click",function(){	
+function addInputEmail() {
+    var addCampoEmail = document.getElementById("addCampoEmail");
+    addCampoEmail.addEventListener("click",function(){	
 
     let valueName = prompt("Introduce el nombre para el name del input: ");
     if(valueName == undefined){
@@ -47,15 +46,15 @@ addCampoEmail.addEventListener("click",function(){
         } else {
             let campoEmail = document.getElementById("campoEmail");
             campoEmail.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueName}</label><input type="text" name"${valueName}" placeholder="${valuePlaceholder}" >`);
+            }
         }
-    }
-    
-});
+        
+    });
+}
 
-// ADD INPUT SELECT
-
-var addCampoListSelect = document.getElementById("addCampoListSelect");
-addCampoListSelect.addEventListener("click",function(){	
+function addInputSelect() {
+    var addCampoListSelect = document.getElementById("addCampoListSelect");
+    addCampoListSelect.addEventListener("click",function(){	
 
     let valueName = prompt("Introduce el nombre para el name del select: ");
     if(valueName == undefined){
@@ -82,15 +81,15 @@ addCampoListSelect.addEventListener("click",function(){
             var contenedorLista = document.getElementById(`${valueName}`);
             for (let i = 0; i < valueOption.length; i++) {  
                 contenedorLista.insertAdjacentHTML("beforeend", `<option value="${valueOption[i]}">${valueOption[i]}</option>`); 
+            }
         }
-    }
-    
-});
+        
+    }); 
+}
 
-// ADD INPUT CHECKBOX
-
-var addCampoListCheckbox = document.getElementById("addCampoListCheckbox");
-addCampoListCheckbox.addEventListener("click",function(){	
+function addInputCheckbox() {
+    var addCampoListCheckbox = document.getElementById("addCampoListCheckbox");
+    addCampoListCheckbox.addEventListener("click",function(){	
 
     let valueName = prompt("Introduce el nombre para el name del checkbox: ");
     if(valueName == undefined){
@@ -115,14 +114,14 @@ addCampoListCheckbox.addEventListener("click",function(){
             let campoListCheckbox = document.getElementById("campoListCheckbox");
             for (let i = 0; i < valueCheckbox.length; i++) {  
                 campoListCheckbox.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueCheckbox[i]}<input type="checkbox" value="${valueCheckbox[i]}" name="${valueName}">`); 
-            }
-    }   
-});    
+                }
+        }   
+    });    
+}
 
-// ADD INPUT RADIO
-
-var addCampoListRadio = document.getElementById("addCampoListRadio");
-addCampoListRadio.addEventListener("click",function(){	
+function addInputRadio() {
+    var addCampoListRadio = document.getElementById("addCampoListRadio");
+    addCampoListRadio.addEventListener("click",function(){	
 
     let valueName = prompt("Introduce el nombre para el name del select: ");
     if(valueName == undefined){
@@ -147,19 +146,28 @@ addCampoListRadio.addEventListener("click",function(){
             let campoListRadio = document.getElementById("campoListRadio");
             for (let i = 0; i < valueRadio.length; i++) {  
                 campoListRadio.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueRadio[i]}<input type="radio" value="${valueRadio[i]}" name="${valueName}">`); 
-            }
-    }
-});    
+                }
+        }
+    });    
+}
 
-// ADD INPUT SUBMIT
-
-var addSubmit = document.getElementById("addSubmit");
-addSubmit.addEventListener("click",function(){	
+function addFormSubmit() {
+    var addSubmit = document.getElementById("addSubmit");
+    addSubmit.addEventListener("click",function(){	
 
     let valueName = prompt("Introduce el nombre para el botón de enviar");
     if(valueName == undefined){
     } else {
         let botonSubmit = document.getElementById("botonSubmit");
         botonSubmit.insertAdjacentHTML("beforeend",`<input type="submit" value="${valueName}" >`);
-    }
-});
+        }
+    });
+}
+
+addInputText();
+addInputNumber();
+addInputEmail();
+addInputSelect();
+addInputCheckbox();
+addInputRadio();
+addFormSubmit();
