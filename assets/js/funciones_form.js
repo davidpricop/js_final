@@ -10,8 +10,14 @@ function addInputText() {
             let valuePlaceholder = prompt("Introduce el placeholder para el input");
             if(valuePlaceholder == undefined){
             } else {
-                let campoTxt = document.getElementById("campoTxt");
-                campoTxt.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueName}</label><input type="text" name"${valueName}" placeholder="${valuePlaceholder}" >`);  
+                let valueRequired = prompt("¿Quieres poner este campo como obligatorio?");
+                    if(valueRequired.toLowerCase() == "si") {
+                        let campoTxt = document.getElementById("campoTxt");
+                        campoTxt.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueName}</label><input type="text" name"${valueName}" placeholder="${valuePlaceholder}" required>`);  
+                    } else {
+                        let campoTxt = document.getElementById("campoTxt");
+                        campoTxt.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueName}</label><input type="text" name"${valueName}" placeholder="${valuePlaceholder}" >`);  
+                    }
                 }
             }
         });
@@ -27,10 +33,16 @@ function addInputNumber() {
         let valuePlaceholder = prompt("Introduce el placeholder para el input");
         if(valuePlaceholder == undefined){
         } else {
-            let campoNumber = document.getElementById("campoNumber");
-            campoNumber.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueName}</label><input type="text" name"${valueName}" placeholder="${valuePlaceholder}" >`);
+                let valueRequired = prompt("¿Quieres poner este campo como obligatorio?");
+                    if(valueRequired.toLowerCase() == "si") {
+                        let campoNumber = document.getElementById("campoNumber");
+                        campoNumber.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueName}</label><input type="text" name"${valueName}" placeholder="${valuePlaceholder}" required>`);
+                    } else {
+                        let campoNumber = document.getElementById("campoNumber");
+                        campoNumber.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueName}</label><input type="text" name"${valueName}" placeholder="${valuePlaceholder}" >`);
+                    }
+                }
             }
-        }
     });
 }
 
@@ -44,8 +56,14 @@ function addInputEmail() {
         let valuePlaceholder = prompt("Introduce el placeholder para el input");
         if(valuePlaceholder == undefined){
         } else {
-            let campoEmail = document.getElementById("campoEmail");
-            campoEmail.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueName}</label><input type="text" name"${valueName}" placeholder="${valuePlaceholder}" >`);
+            let valueRequired = prompt("¿Quieres poner este campo como obligatorio?");
+                if(valueRequired.toLowerCase() == "si") {
+                    let campoEmail = document.getElementById("campoEmail");
+                    campoEmail.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueName}</label><input type="text" name"${valueName}" placeholder="${valuePlaceholder}" required>`);
+                } else {
+                    let campoEmail = document.getElementById("campoEmail");
+                    campoEmail.insertAdjacentHTML("beforeend",`<label for="${valueName}">${valueName}</label><input type="text" name"${valueName}" placeholder="${valuePlaceholder}" >`);
+                }
             }
         }
         
